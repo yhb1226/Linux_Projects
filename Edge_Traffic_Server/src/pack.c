@@ -47,3 +47,13 @@ int message_receive (Vehicle_Feature *p,uint8_t buf)
 
 }
 
+//发送数据包头
+int message_head ()
+{
+    
+
+
+
+}
+
+
