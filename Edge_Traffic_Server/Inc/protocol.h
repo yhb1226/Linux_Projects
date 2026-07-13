@@ -1,6 +1,10 @@
 #ifndef __PROTOCOL_H
 #define __PROTOCOL_H
 
+#define  NUMBER_MAGIC       0X20041226
+#define  NUMBER_VERSION     1
+
+#include "car_record.h"
 #include "pack.h" 
 
 
@@ -12,6 +16,15 @@ typedef struct {
     uint32_t payload_len;   // 载荷长度（不含头）
 } __attribute__((packed)) message_header_t;
 
+
+//信息上报的载荷结构体
+typedef struct 
+{
+    char car_color[COLOR_MAX_LEN];  //颜色
+    char car_id[ID_MAX_LEN];        //车牌
+    char car_brand[BRAND_MAX_LEN];  //品牌
+
+}Vehicle_Feature_Payload;
 
 
 #endif
