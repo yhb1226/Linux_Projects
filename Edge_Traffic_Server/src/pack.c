@@ -8,7 +8,7 @@
 int message_send (Vehicle_Feature_Payload *p, uint8_t *buf, int max_len)
 {
     int total_len = COLOR_MAX_LEN + ID_MAX_LEN + BRAND_MAX_LEN;
-    if(total_len < max_len)
+    if(max_len < total_len)
     return -1;
 
     int offset = 0;
@@ -29,10 +29,10 @@ int message_send (Vehicle_Feature_Payload *p, uint8_t *buf, int max_len)
 }
 
 //接收网络字节序列
-int message_receive (Vehicle_Feature *p, uint8_t buf, int max_len)
+int message_receive (Vehicle_Feature_Payload *p, uint8_t *buf, int buf_len)
 {
-    int total_len = COLOR_MAX_LEN + ID_MAX_LEN + BRAND_MAX_LEN;;
-    if(max_len < total_len)
+    int total_len = COLOR_MAX_LEN + ID_MAX_LEN + BRAND_MAX_LEN;
+    if(buf_len < total_len)
     return -1;
 
     int offset = 0;
