@@ -7,6 +7,13 @@
 #include "car_record.h"
 #include "pack.h" 
 
+enum message_type{
+    MESSAGE_SEND = 0X01,    //数据发送
+    MESSAGE_RECEIVE = 0X02, //数据接收
+    MESSAGE_ERROR = 0X03,   //数据出错
+    MESSAGE_YES = 0XFF      //数据确认
+};
+
 
 typedef struct {
     uint32_t magic;         //魔数
