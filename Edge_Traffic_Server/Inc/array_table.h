@@ -1,25 +1,24 @@
 #ifndef __ARRAY_TABLE_H
 #define __ARRAY_TABLE_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "car_record.h"
 
 #define MAX_CAR       1000
 #define COLOR_MAX_LEN 20
-#define ID_MAX_LEN    30
-#define BRAND_MAX_LEN 20
 
 
-typedef struct array_table{
-    
-    char car_color[COLOR_MAX_LEN];  //颜色
-    char car_id[ID_MAX_LEN];        //车牌
-    char car_brand[BRAND_MAX_LEN];  //品牌
+typedef struct {
+    char car_color[COLOR_MAX_LEN];
+    char car_id[ID_MAX_LEN];
+    char car_brand[BRAND_MAX_LEN];
+} array_table_t;
 
-}array_table_t;
+// 全局变量（在 .c 中定义）
+extern array_table_t packing_car[MAX_CAR];
+extern int count_car;
 
-
+// 函数声明
+int add_car(const char *id, const char *brand, const char *color);
+array_table_t *find_car(const char *id);
 
 #endif
-
