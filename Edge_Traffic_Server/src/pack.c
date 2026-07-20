@@ -47,7 +47,7 @@ int message_receive (Vehicle_Feature_Payload *p, uint8_t *buf, int buf_len)
 
     memcpy(p->car_brand, buf + offset, BRAND_MAX_LEN);
     offset += BRAND_MAX_LEN;
-    p->car_brand[BRAND_MAX_LEN] = '\0'; // 确保结束符
+    p->car_brand[BRAND_MAX_LEN - 1] = '\0'; // 确保结束符
 
 
     return offset;
