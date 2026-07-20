@@ -61,7 +61,7 @@ int main()
     int add_ret3 = add_car(restored3.car_id, restored3.car_brand, restored3.car_color);
     assert(add_ret3 == 0);
 
-
+    //使用.h文件里面的结构体指针的形式，可以不使用声明就可以直接使用
     array_table_t *found = find_car("沪B.67890");
     if (found != NULL) {
         printf("找到：%s %s\n", found->car_brand, found->car_color);

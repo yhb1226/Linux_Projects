@@ -23,7 +23,7 @@ int add_car(const char *id, const char *brand, const char *color) {
     return 0;
 }
 
-//无需在别处声明
+//返回结构体中变量指针地址的形式更加有利于直接拿到返回的地址信息，然后在别处直接使用拿到返回的地址信息把对应的数据给取出来
 array_table_t *find_car(const char *id) {
     for (int i = 0; i < count_car; i++) {
         if (strcmp(packing_car[i].car_id, id) == 0) {
